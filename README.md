@@ -1,4 +1,4 @@
-## Just Notes
+## Note List
 
 - [2019-12-05 JSON](/2019_12_05-JSON.md)
 

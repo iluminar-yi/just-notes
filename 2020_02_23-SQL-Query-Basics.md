@@ -75,16 +75,16 @@ SQL Query Basics
 ```
 {
   Alex: [
-    (Alex, AProduct01, 2),
-    (Alex, BProduct2020, 1),
-    (Alex, AProduct01, 1),
-    (Alex, BProduct2020, 1),
+    (9a661dd9-eadc-4c31-8b01-710e6fd2c55f, Alex, AProduct01, 2),
+    (59c34a99-3a13-4c39-be56-af52de4c642f, Alex, BProduct2020, 1),
+    (69de362a-b487-49b9-b459-7cadf23b8969, Alex, AProduct01, 1),
+    (99adca2d-bf19-4b03-b304-226e63dbf2e8, Alex, BProduct2020, 1),
   ],
   Mary: [
-    (Mary, AProduct01, 10),
+    (96313bf4-fb10-4e21-bf35-64ad5e8e5fc8, Mary, AProduct01, 10),
   ],
   Chris: [
-    (Chris, CProductV01, 2),
+    (3f8a5683-1f8c-4317-9ce1-23a93c15bd81, Chris, CProductV01, 2),
   ],
 }
 ```
@@ -92,16 +92,16 @@ SQL Query Basics
 ```
 {
   AProduct01: [
-    (Alex, AProduct01, 2),
-    (Mary, AProduct01, 10),
-    (Alex, AProduct01, 1),
+    (9a661dd9-eadc-4c31-8b01-710e6fd2c55f, Alex, AProduct01, 2),
+    (96313bf4-fb10-4e21-bf35-64ad5e8e5fc8, Mary, AProduct01, 10),
+    (99adca2d-bf19-4b03-b304-226e63dbf2e8, Alex, AProduct01, 1),
   ],
   BProduct2020: [
-    (Alex, BProduct2020, 1),
-    (Alex, BProduct2020, 1),
+    (59c34a99-3a13-4c39-be56-af52de4c642f, Alex, BProduct2020, 1),
+    (99adca2d-bf19-4b03-b304-226e63dbf2e8, Alex, BProduct2020, 1),
   ],
   CProductV01: [
-    (Chris, CProductV01, 2),
+    (3f8a5683-1f8c-4317-9ce1-23a93c15bd81, Chris, CProductV01, 2),
   ],
 }
 ```
@@ -121,7 +121,11 @@ SQL Query Basics
     ```
   这个query的意思便是：先根据`tblProductSales`表格的买家名称进行归类，然后在每个归好的类里分别数有多少条记录，并在数完后选择买家名字和数完的结果将其命名为"NumPurchases"
   
-  为什么有三个写法？`count(OrderID)`是指数数多少个不同的`OrderID`。因为每一个`OrderID`都是独特的，所以可以数出每一个人有多少条数据。而`count(1)`和`count(*)`都是约定俗成
+  为什么有三个写法？`count(OrderID)`是指数数多少个不同的`OrderID`。因为每一个`OrderID`都是独特的，所以可以数出每一个人有多少条数据。
+  
+  而`count(*)`可以是因为`*`选择了所有列，既然其中一列已经确保每行都唯一了，那么所有列加在一起更会保证唯一了。
+  
+  `count(1)`则是约定俗成。
   的数行数的方法
 * 同样的，当我们想知道"每个产品平均购买数量是多少"的时候，我们需要：
     ```sql

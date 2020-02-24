@@ -2,6 +2,7 @@
 
 - [2019-12-05 JSON](/2019_12_05-JSON.md)
 - [2020-02-18 TypeScript + React Intro](/2020_02_18-TypeScript-+-React-Intro.md)
+- [2020-02-23 SQL Query Basics](/2020_02_23-SQL-Query-Basics.md)
 
 ---
 

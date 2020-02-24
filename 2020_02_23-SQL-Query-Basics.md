@@ -21,7 +21,7 @@ SQL Query Basics
     from tblProductSales;
     ```
     这样返回的数据里只有`oid`, `name`, `pid`, `q`四列
-* 这在使用[聚合函数](#聚合函数/Aggregate Functions)的时候可以起名字用，不这么做的话不同的数据库会使用不同的默认名称
+* 这在使用[聚合函数](#聚合函数aggregate-functions)的时候可以起名字用，不这么做的话不同的数据库会使用不同的默认名称
     ```sql
     select max(Quantity) as MaxPurchaseQuantityInHistory
     from tblProductSales;
